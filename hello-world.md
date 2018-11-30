@@ -1,0 +1,32 @@
+﻿@[TOC](leedcode数组第一题（删除排序数组中的重复项）)
+
+代码：
+int removeDuplicates(int* nums, int numsSize)
+{
+    if (numsSize <= 0)
+    {
+        return 0;
+    }
+    int i = 0;
+    for (int j = 0; j < numsSize; j++)
+    {
+        if (nums[i] != nums[j])
+        {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    
+    return i + 1；
+   
+}
+解题思路：
+1.首先要排除输入的数是非正数的错误情况
+2.考虑正数：
+（1）要输出新的数组=重新赋值输出，所以申请i，j两个空间，并都赋0值
+（2）当i，j所处下标的数相等时，i， j分别都增加1；不相等时，仅j增加，i不变
+（3）因为i从0开始，所以最后输出几个数字的时候，为i+1个数字
+
+
+
+
